@@ -1,0 +1,94 @@
+ext{
+
+    android = [
+            compileSdkVersion : 25,
+            buildToolsVersion : "25.0.3",
+            minSdkVersion : 19,
+            targetSdkVersion : 25,
+            versionCode  : 10000,
+            versionName  : "1.0.0",
+            supportVersion : "25.3.1",
+            anko_version: "0.10.1"
+    ]
+
+    dependencies = [
+            ////// ====== System ====== ///////
+            "support-v4": "com.android.support:support-v4:$android.supportVersion",
+            "appcompat-v7": "com.android.support:appcompat-v7:$android.supportVersion",
+            "design": "com.android.support:design:$android.supportVersion",
+            "recyclerview-v7": "com.android.support:recyclerview-v7:$android.supportVersion",
+            //Kotlin
+            "kotlin": "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version",
+            // Anko
+            "anko": "org.jetbrains.anko:anko:$android.anko_version",
+            // Anko Commons
+            "anko-commons": "org.jetbrains.anko:anko-commons:$android.anko_version",
+
+            // Anko Layouts
+            "anko-sdk25": "org.jetbrains.anko:anko-sdk25:$android.anko_version", // sdk15, sdk19, sdk21, sdk23 are also available
+            "anko-appcompat-v7": "org.jetbrains.anko:anko-appcompat-v7:$android.anko_version",
+
+            // Coroutine listeners for Anko Layouts
+            "anko-sdk25-coroutines": "org.jetbrains.anko:anko-sdk25-coroutines:$android.anko_version",
+            "anko-appcompat-v7-couroutines": "org.jetbrains.anko:anko-appcompat-v7-couroutines:$android.anko_version",
+
+            // Anko SQLite
+            "anko-sqlite": "org.jetbrains.anko:anko-sqlite:$android.anko_version",
+
+            //// Anko Android support libraries ////
+
+            // Appcompat-v7 (only Anko Commons)
+            "anko-appcompat-v7-commons": "org.jetbrains.anko:anko-appcompat-v7-commons:$android.anko_version",
+
+            // Appcompat-v7 (Anko Layouts)
+            "anko-appcompat-v7": "org.jetbrains.anko:anko-appcompat-v7:$android.anko_version",
+            "anko-coroutines": "org.jetbrains.anko:anko-coroutines:$android.anko_version",
+
+            // CardView-v7
+            "anko-cardview-v7": "org.jetbrains.anko:anko-cardview-v7:$android.anko_version",
+
+            // Design
+            "anko-design": "org.jetbrains.anko:anko-design:$android.anko_version",
+            "anko-design-coroutines": "org.jetbrains.anko:anko-design-coroutines:$android.anko_version",
+
+            // GridLayout-v7
+            "anko-gridlayout-v7": "org.jetbrains.anko:anko-gridlayout-v7:$android.anko_version",
+
+            // Percent
+            "anko-percent": "org.jetbrains.anko:anko-percent:$android.anko_version",
+
+            // RecyclerView-v7
+            "anko-recyclerview-v7": "org.jetbrains.anko:anko-recyclerview-v7:$android.anko_version",
+            "anko-recyclerview-v7-coroutines": "org.jetbrains.anko:anko-recyclerview-v7-coroutines:$android.anko_version",
+
+            // Support-v4 (only Anko Commons)
+            "anko-support-v4-commons": "org.jetbrains.anko:anko-support-v4-commons:$android.anko_version",
+
+            // Support-v4 (Anko Layouts)
+            "anko-support-v4": "org.jetbrains.anko:anko-support-v4:$android.anko_version",
+
+            ////// ======= framework ====== //////
+            // RxJava
+            "rxjava": 'io.reactivex:rxjava:1.1.6',
+            "rxandroid": 'io.reactivex:rxandroid:1.2.1',
+            //RxLifecycle管理Rx的生命周期
+            "rxlifecycle": 'com.trello:rxlifecycle:0.6.1',
+            "rxlifecycle-components":'com.trello:rxlifecycle-components:0.6.1',
+            "rxlifecycle-kotlin":'com.trello:rxlifecycle-kotlin:0.6.1',
+
+            //retrofit网络
+            "retrofit":'com.squareup.retrofit2:retrofit:2.1.0',
+            "retrofit-converter-gson":'com.squareup.retrofit2:converter-gson:2.0.2',
+            "retrofit-adapter-rxjava": 'com.squareup.retrofit2:adapter-rxjava:2.0.2',
+
+            //图片加载
+            "glide": 'com.github.bumptech.glide:glide:3.7.0',
+            "picasso": 'com.squareup.picasso:picasso:2.5.2',
+            "fresco": 'com.facebook.fresco:fresco:0.12.0',
+
+            //动画兼容
+            "nineoldandroids": 'com.nineoldandroids:library:2.4.0',
+
+    ]
+
+}

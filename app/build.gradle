@@ -1,15 +1,19 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.3"
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    buildToolsVersion rootProject.ext.android.buildToolsVersion
+    useLibrary 'org.apache.http.legacy'
+
     defaultConfig {
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
+
         applicationId "com.ybj366533.muta"
-        minSdkVersion 21
-        targetSdkVersion 25
-        versionCode 1
-        versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -21,15 +25,37 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     compile 'com.android.support:appcompat-v7:25.3.1'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     testCompile 'junit:junit:4.12'
-    compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    ////// ====== System ====== ///////
+    //Kotlin
+    compile rootProject.ext.dependencies['kotlin']
+    compile rootProject.ext.dependencies['anko']
+    compile rootProject.ext.dependencies['appcompat-v7']
+    compile rootProject.ext.dependencies['recyclerview-v7']
+    ////// ======= framework ====== //////
+    //RxJava
+    compile rootProject.ext.dependencies['rxjava']
+    compile rootProject.ext.dependencies['rxandroid']
+    //RxLifecycle管理Rx的生命周期
+    compile rootProject.ext.dependencies['rxlifecycle']
+    compile rootProject.ext.dependencies['rxlifecycle-components']
+    compile rootProject.ext.dependencies['rxlifecycle-kotlin']
+    //retrofit网络
+    compile rootProject.ext.dependencies['retrofit']
+    compile rootProject.ext.dependencies['retrofit-converter-gson']
+    compile rootProject.ext.dependencies['retrofit-adapter-rxjava']
+    //图片加载
+    compile rootProject.ext.dependencies['glide']
+    compile project(':MutaBase')
 }
 repositories {
     mavenCentral()
 }
+
+
